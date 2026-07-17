@@ -8,7 +8,7 @@ fake = Faker()
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
-driver.get(r"file:///C:/Users/Lenovo/PycharmProjects/Software%20Testing%20and%20Automation/login.html")
+driver.get(r"file:///C:/Users/Lenovo/PycharmProjects/Software%20Testing%20and%20Automation/login32.html")
 
 driver.maximize_window()
 
