@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+</head>
+<body>
+
+<h2>User Registration Form</h2>
+
+<form id="registrationForm" onsubmit="return registerUser()">
+
+    Name:<br>
+    <input type="text" id="name" required><br><br>
+
+    Email:<br>
+    <input type="email" id="email" required><br><br>
+
+    Password:<br>
+    <input type="password" id="password" required><br><br>
+
+    <button type="submit" id="register">Register</button>
+
+</form>
+
+<p id="success-message" style="display:none; color:green;">
+Registration Successful
+</p>
+
+<script>
+function registerUser() {
+
+    const form = document.getElementById("registrationForm");
+
+    // If any HTML5 validation fails, don't show success
+    if (!form.checkValidity()) {
+        return true;   // Let the browser show its validation message
+    }
+
+    document.getElementById("success-message").style.display = "block";
+
+    return false;
+}
+</script>
+
+</body>
+</html>

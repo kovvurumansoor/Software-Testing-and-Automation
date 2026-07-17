@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+
+<h2>Login Form</h2>
+
+<form onsubmit="return validateLogin()">
+    Username:
+    <input type="text" id="username"><br><br>
+
+    Password:
+    <input type="password" id="password"><br><br>
+
+    <button id="login" type="submit">Login</button>
+</form>
+
+<p id="error-message" style="display:none;color:red;">
+Invalid Username or Password
+</p>
+
+<script>
+function validateLogin(){
+
+    var username=document.getElementById("username").value;
+    var password=document.getElementById("password").value;
+
+    if(username=="admin" && password=="admin123"){
+        alert("Login Successful");
+    }
+    else{
+        document.getElementById("error-message").style.display="block";
+    }
+
+    return false;
+}
+</script>
+
+</body>
+</html></title>
+</head>
+<body>
+
+</body>
+</html>
