@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Filter</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            background:#f2f2f2;
+            text-align:center;
+        }
+
+        h2{
+            color:#333;
+        }
+
+        select{
+            padding:10px;
+            font-size:16px;
+            margin:20px;
+        }
+
+        .products{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:20px;
+        }
+
+        .product{
+            width:180px;
+            background:white;
+            padding:15px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        .price{
+            color:green;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Product Category Filter</h2>
+
+<select id="category" onchange="filterProducts()">
+    <option value="all">All</option>
+    <option value="electronics">Electronics</option>
+    <option value="clothing">Clothing</option>
+    <option value="books">Books</option>
+</select>
+
+<div class="products">
+
+    <div class="product electronics">
+        <h3>Laptop</h3>
+        <p class="price">₹50000</p>
+    </div>
+
+    <div class="product electronics">
+        <h3>Mobile</h3>
+        <p class="price">₹20000</p>
+    </div>
+
+    <div class="product clothing">
+        <h3>T-Shirt</h3>
+        <p class="price">₹800</p>
+    </div>
+
+    <div class="product clothing">
+        <h3>Jeans</h3>
+        <p class="price">₹1500</p>
+    </div>
+
+    <div class="product books">
+        <h3>Python Book</h3>
+        <p class="price">₹600</p>
+    </div>
+
+    <div class="product books">
+        <h3>Java Book</h3>
+        <p class="price">₹700</p>
+    </div>
+
+</div>
+
+<script>
+
+function filterProducts(){
+
+    let category=document.getElementById("category").value;
+
+    let products=document.getElementsByClassName("product");
+
+    for(let product of products){
+
+        if(category==="all"){
+            product.style.display="block";
+        }
+
+        else if(product.classList.contains(category)){
+            product.style.display="block";
+        }
+
+        else{
+            product.style.display="none";
+        }
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload and Download</title>
+
+    <style>
+        body{
+            font-family:Arial;
+            text-align:center;
+            background:#f2f2f2;
+            margin-top:60px;
+        }
+
+        .box{
+            background:white;
+            width:400px;
+            margin:auto;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        button{
+            padding:10px 20px;
+            margin-top:20px;
+            cursor:pointer;
+        }
+
+        #message{
+            margin-top:20px;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+
+<h2>File Upload</h2>
+
+<input type="file" id="fileInput" accept=".pdf">
+
+<br>
+
+<button id="uploadBtn" onclick="uploadFile()">Upload</button>
+
+<p id="message"></p>
+
+<hr>
+
+<a id="downloadLink" href="sample.pdf" download>
+    <button>Download Sample PDF</button>
+</a>
+
+</div>
+
+<script>
+
+function uploadFile(){
+
+    let file=document.getElementById("fileInput").files[0];
+
+    if(!file){
+        document.getElementById("message").innerHTML="Please select a file.";
+        return;
+    }
+
+    if(file.name.endsWith(".pdf")){
+        document.getElementById("message").innerHTML="File uploaded successfully!";
+    }
+
+    else{
+        document.getElementById("message").innerHTML="Unsupported file format!";
+    }
+
+}
+
+</script>
+
+</body>
+</html>
